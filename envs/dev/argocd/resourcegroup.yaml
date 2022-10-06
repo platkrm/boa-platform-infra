@@ -1,0 +1,7 @@
+apiVersion: kpt.dev/v1alpha1
+kind: ResourceGroup
+metadata:
+  name: inventory-92819342
+  namespace: argocd
+  labels:
+    cli-utils.sigs.k8s.io/inventory-id: 910bd1ef083b106dd98ca573172da4fd85213e32-1665095789684618000
