@@ -1,0 +1,26 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata:
+  name: frontend
+  annotations:
+    config.kubernetes.io/local-config: "true"
+upstream:
+  type: git
+  git:
+    repo: git@github.com:platkrm/boa-platform-blueprints
+    directory: /basens
+    ref: v1
+  updateStrategy: resource-merge
+upstreamLock:
+  type: git
+  git:
+    repo: git@github.com:platkrm/boa-platform-blueprints
+    directory: /basens
+    ref: basens/v1
+    commit: f083a4f58a531ec1d35983c028fb3ba2d0271226
+info:
+  description: kpt package for provisioning namespace
+pipeline:
+  mutators:
+    - image: gcr.io/kpt-fn/set-namespace:v0.4.1
+      configPath: package-context.yaml
