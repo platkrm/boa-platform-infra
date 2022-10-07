@@ -2,6 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: kptfile.kpt.dev
+  namespace: frontend
   annotations:
     config.kubernetes.io/local-config: "true"
 data:
